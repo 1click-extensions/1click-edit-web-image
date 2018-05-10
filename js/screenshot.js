@@ -147,7 +147,7 @@ var screenshot = {
       })
   },
   addScreen: function (data) {
-    if (api.stop) return;
+    ;
     screenshot.retries++;
     chrome.tabs.sendMessage(screenshot.thisTabId, $.extend({
       cropData: screenshot.cropData,
@@ -198,7 +198,7 @@ var screenshot = {
       if (chrome.runtime.lastError) {
         console.error(chrome.runtime.lastError);
       }
-      if (api.stop) return ;
+       ;
       if ((mess.top || parseInt(mess.top) == 0 )) {
         screenshot.screens.push({left: parseInt(mess.left), top: parseInt(mess.top), data: data});
       }
@@ -268,7 +268,7 @@ var screenshot = {
     var firstTime = true;
     var i = 0;
     loadImage = function (i) {
-      if (api.stop) return;
+      ;
       ctx = screenshot.canvas.getContext('2d');
       img[i] = $('<img tag=' + i + '/>');
       img[i].load(function () {
@@ -325,7 +325,7 @@ var screenshot = {
           }
           return;
         }
-        if (api.stop) return
+        
         loadImage(++i);
       });
       try {
@@ -335,7 +335,7 @@ var screenshot = {
       }
       //$(document.body).append('Image:' + i + ':<br/><img width=200px src=' + screens[i].data + ' /><hr>');
     }
-    if (api.stop) return
+    
     loadImage(0);
   }, 
 };

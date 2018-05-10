@@ -27,6 +27,6 @@
     ],
     "offline_enabled":true,
     "default_locale": "en",
-    "permissions": ["activeTab"],
+    "permissions": ["activeTab","<all_urls>"],
     "optional_permissions": ["desktopCapture" ]
 }
