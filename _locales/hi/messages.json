@@ -1,6 +1,8 @@
 {
-	"new":{"message":"NEW"},
-"name": {"message": "Webpage & WebCam Screenshot" },
-"dir": {"message": "ltr" },
-"description": {"message": "यह वेबसाइट्स पर इमेज बनाने के लिए सर्वोत्तम है. आप ओफ़लाइन सेव कर सकते हैं, परिमार्जन कर सकते हैं फेसबुक, एवरनोट, गूगल ड्राइव आदि .." }
-}
+    "popup_title": {"message": "Click on image you want to edit" },
+    "browser_action": {"message": "Edit image" },
+    "ext_desc": {"message": "Esit image from website" },
+    "ext_name": {"message": "1click edit web image" }
+  }
+  
+  

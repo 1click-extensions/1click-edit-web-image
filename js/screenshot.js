@@ -225,9 +225,21 @@ var screenshot = {
       })
     }, timeoutInterval);
   },
+  createBySimpleImg : function(data, width,height){
+    screenshot.screens = [{
+      top:0,
+      left:0,
+      data:data,
+      width:width,
+      height:height,
+    }];
+    screenshot.createScreenShot()
+  },
   createScreenShot: function () {
-    var mess = screenshot.screenShotParams;
-    chrome.tabs.sendMessage(screenshot.thisTabId, {type: 'finish'});
+    var mess = screenshot.screenShotParams || {};
+    if(screenshot.thisTabId){
+      chrome.tabs.sendMessage(screenshot.thisTabId, {type: 'finish'});
+    }
     var img = [];
     var theHeader, theFotter;
 
@@ -249,7 +261,7 @@ var screenshot = {
       // editorDocument=editor.window.document;
     }
 
-    if (!screenshot.url) url = mess.url;
+    //if (!screenshot.url) url = mess.url;
 
     var offsetTop = 0;
 

@@ -1,6 +1,8 @@
 {
-	"new":{"message":"NEW"},
-"name": {"message": "Webpage & WebCam Screenshot" },
-"dir": {"message": "ltr" },
-"description": {"message": "Acesta este cel mai bun pentru a crea imagini pentru pagini de internet.Poti salva si edita offline, poti posta pe Facebook,Evern.." }
-}
+    "popup_title": {"message": "Click on image you want to edit" },
+    "browser_action": {"message": "Edit image" },
+    "ext_desc": {"message": "Esit image from website" },
+    "ext_name": {"message": "1click edit web image" }
+  }
+  
+  

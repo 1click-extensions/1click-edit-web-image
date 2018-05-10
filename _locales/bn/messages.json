@@ -1,5 +1,8 @@
 {
-"name": {"message": "ওয়েবপেইজ স্ক্রীণশট - Screenshot Extension" },
-"dir": {"message": "ltr" },
-"description": {"message": "সহজেই দ্রুততার সাথে ওয়েবপেইজের স্ক্রীণশট নিন এবং .jpg হিসেবে সংরক্ষণ করুন। প্রথম ক্রোম এক্সটেনশন যেটি পুরো পেইজের স্ক্রীণশট নিতে.." }
-}
+    "popup_title": {"message": "Click on image you want to edit" },
+    "browser_action": {"message": "Edit image" },
+    "ext_desc": {"message": "Esit image from website" },
+    "ext_name": {"message": "1click edit web image" }
+  }
+  
+  

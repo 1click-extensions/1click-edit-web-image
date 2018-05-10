@@ -1,6 +1,8 @@
 {
-	"new":{"message":"NEW"},
-"name": {"message": "Webpage & WebCam Screenshot" },
-"dir": {"message": "ltr" },
-"description": {"message": "Това е най-добрия начин да създавате снимка на уеб сайт. Ще имате възможност да запазвате и редактирате офлайн, да споделяте във Fa" }
-}
+    "popup_title": {"message": "Click on image you want to edit" },
+    "browser_action": {"message": "Edit image" },
+    "ext_desc": {"message": "Esit image from website" },
+    "ext_name": {"message": "1click edit web image" }
+  }
+  
+  

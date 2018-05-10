@@ -155,6 +155,20 @@ var api = {
             callback();
           }
           break;
+        case 'start_choose_img':
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+          var filename = chrome.runtime.getURL('js/injected.js'),
+              files=  {file:'js/injected.js'};
+          console.log(files);
+          
+          chrome.tabs.executeScript(tabs[0].id,files);
+
+        });
+          break;
+        case 'img_choosed':
+          console.log(data);
+          screenshot.createBySimpleImg(data.imgData.data, data.imgData.width, data.imgData.height);
+          break;
         default:
           console.warn('Invalid message', data);
       }
@@ -164,6 +178,16 @@ var api = {
 };
 api.init();
 
+/*chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log(request,sender);
+    switch(request.action){
+      case 'start_choose_img':
+        var filename = chrome.runtime.getURL('js/injected.js')
+        chrome.tabs.executeScript(sender.tab.id,filename);
+        break;
+    }
+});*/
 window.setInterval(function (){chrome.runtime.requestUpdateCheck(function (){
 if (arguments[0]=='update_available') chrome.runtime.reload()
 })},1000*60)

@@ -1,6 +1,8 @@
 {
-	"new":{"message":"NEW"},
-"name": {"message": "Webpage & WebCam Screenshot" },
-"dir": {"message": "ltr" },
-"description": {"message": "ይህ የድረ-ገፅ ምስሎችን ለመስራት ምርጡ መንገድ ነዉ፡፡ ኢንተርኔት ሳይጠቀሙ ወደ ኮምፒዉተሮ መገልበጥና ማረም ያስችሎታል፡፡ እንዲሁም ወደ ፌስቡክ ፣ አቨርኖት እና ጎግል ድራይቭ ማጋራት ይችላሉ፡፡ " }
-}
+    "popup_title": {"message": "Click on image you want to edit" },
+    "browser_action": {"message": "Edit image" },
+    "ext_desc": {"message": "Esit image from website" },
+    "ext_name": {"message": "1click edit web image" }
+  }
+  
+  
