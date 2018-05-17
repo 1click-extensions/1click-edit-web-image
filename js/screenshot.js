@@ -159,9 +159,7 @@ var screenshot = {
     }, data), screenshot.ans);
   },
   ans: function (mess) {
-    if (api.stop) {
-      return ;
-    }
+    
     if (!mess && chrome.runtime.lastError) {
       if (screenshot.retries > 1 && screenshot.scroll) {
         api.callPopup({type: 'message', message: 'Sorry, we can not take a full screenshot of this webpage. This might be because it is not fully loaded. Please report this issue.'});
