@@ -2172,7 +2172,7 @@ $(function(){
 	var plugins_to_show=defaultPlugins.slice();
 
 	staticPlugin=new Toolbar({
-		'plugins':plugins_to_show,
+		'plugins':plugins_to_show||{},
 		'element': document.getElementById('toolbarContainer'),
 		'namespace':'editor',
 		enlargable:false,

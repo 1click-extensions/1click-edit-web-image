@@ -31,7 +31,7 @@ var sizes = {
                 error: e.toString()
             }
         }
-        return createPluginFromObject(newPlugin)
+        return null;//createPluginFromObject(newPlugin)
         //Check for function to click
     }
 
@@ -339,6 +339,7 @@ function isNumber(n) {
 var sb_plugins = {};
 
 function addObjectToPlugins(object) {
+    return;
     if (!Array.isArray(object)) object = [object]
     $.each(object, function() {
         var object = this;
@@ -593,6 +594,7 @@ function Toolbar(options) {
     }
 
     this.addPlugins = function(object) {
+        return;
         if (!Array.isArray(object)) object = [object];
         $.each(object, function(key, cfg) {
             var newPlugin = createPluginFromObject(cfg);

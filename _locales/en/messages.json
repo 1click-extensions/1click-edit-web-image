@@ -1,5 +1,6 @@
 {
     "popup_title": {"message": "Click on image you want to edit" },
+    "choose_image": {"message": "Choose image" },
     "browser_action": {"message": "Edit image" },
     "ext_desc": {"message": "Edit image from website" },
     "ext_name": {"message": "1click edit web image" }

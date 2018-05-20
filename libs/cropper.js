@@ -317,22 +317,19 @@ function load_cropper_without_selection(rect) {
 	};
 
 	$('html').css('position','inherit');
-	var $toolbar = $('<div class=ws-styles><table style="border: 0;"><tr style="border: 0;vertical-align: middle"><td style="border: 0;vertical-align: middle"><button class="open msg" style="margin:1px;color:black;background-color:white;cursor:pointer;font-size:1em;border: 1px solid #999; border-radius: 4px;padding: 3px 9px;" tag=open></button>' +
-	'<button class="save msg" style="margin:1px;color:black;background-color:white;cursor:pointer;font-size:1em;border: 1px solid #999; border-radius: 4px;padding: 3px 9px;" tag=save></button>' +
-	'<button class="share msg" tag=share style="margin:1px;color:black;background-color:white;cursor:pointer;font-size:1em;border: 1px solid #999; border-radius: 4px;padding: 3px 9px;"></button></td><td style="border: 0;vertical-align: middle"><div class=realToolbar></div></td></tr></table></div>');
+	var $toolbar = $('<div class=ws-styles>' +
+		'<button type="button" class="open" style="    margin-top: 40px!important;cursor: pointer!important;text-decoration: none!important;color: #fff!important;background-color: #26a69a!important;text-align: center!important;letter-spacing: .5px!important;-webkit-transition: background-color .2s ease-out!important;transition: background-color .2s ease-out!important;cursor: pointer!important;font-size: 22px!important;outline: 0!important;border: none!important;border-radius: 2px!important;display: inline-block!important;height: 38px!important;padding: 4px 16px!important;vertical-align: middle!important;-webkit-tap-highlight-color: transparent;">' + chrome.i18n.getMessage('choose_image') + ' </button>' + 
+		'</div>');
 
-	jQuery('.msg', $toolbar).each(function() {
-		jQuery(this).html(chrome.i18n.getMessage(jQuery(this).attr('tag')));
-	});
 	var $realToolbar = $('.realToolbar', $toolbar);
 
 	window.crop.icons = $toolbar;
-	plugins_to_show = defaultPlugins.slice();
+	plugins_to_show = 'undefined' != typeof plugins_to_show ? plugins_to_show.slice() : [];
 	plugins_to_show = $.grep(plugins_to_show, function(o) {
-		return (
-			// o.key!='openscreenshot' &&
-		o.key != 'googledrive'
-		)
+			return (
+					// o.key!='openscreenshot' &&
+			o.key != 'googledrive'
+			)
 	})
 	$('button.open', $toolbar).on('click', function() {
 		removeClip();
@@ -351,7 +348,7 @@ function load_cropper_without_selection(rect) {
 			}
 		})
 	});
-	$('button.save', $toolbar).on('click', function() {
+	/*$('button.save', $toolbar).on('click', function() {
 		$('[plugin-key=save]').trigger($.Event({
 			type: 'click'
 		}))
@@ -365,7 +362,7 @@ function load_cropper_without_selection(rect) {
 		$('[plugin-key=openscreenshot]').trigger($.Event({
 			type: 'click'
 		}));
-	});
+	});*/
 
 	var staticPlugin = new Toolbar({
 		'plugins': plugins_to_show,

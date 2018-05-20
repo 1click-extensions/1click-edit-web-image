@@ -86,6 +86,7 @@ var screenshot = {
     // x=setTimeout(function() {callback(screenshot.url)},200);
     // chrome.permissions.contains({permissions:['tabs']},function(a){if(a){
     chrome.tabs.query({active: true, currentWindow: true}, function (w) {
+      console.log('w',w);
       w = w[0];
       screenshot.thisTab = w;
       screenshot.thisTabId = w.id;
@@ -106,7 +107,7 @@ var screenshot = {
       var realCallback = callback;
       screenshot.screens = [];
       screenshot.description = '';
-      api.callPopup({type: 'working'});
+      //api.callPopup({type: 'working'});
       callback = function () {
         window.setTimeout(realCallback, (parseInt(localStorage['delay'], 10) || 0) * 1000)
       };

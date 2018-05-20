@@ -39,20 +39,32 @@ if (!localStorage.created) {
   localStorage.ver = manifest.version;
   localStorage.created = 1;
 }
-
+chrome.browserAction.onClicked.addListener(function(tab){
+  console.log('dddd');
+  screenshot.tryGetUrl(function () {
+    console.log('tryGetUrl', screenshot.thisTabId);
+    codeinjector.executeOnTab( screenshot.thisTabId,
+      screenshot.thisTab,
+      true,
+      function(){
+        chrome.tabs.executeScript(screenshot.thisTabId, {code:'load_cropper_without_selection()'})
+      })
+    
+  });
+});
 chrome.runtime.onMessage.addListener(function (data, sender, callback) {
   switch (data.data) {
-      case 'start_choose_img':
-      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        var filename = chrome.runtime.getURL('js/injected.js'),
-            files=  {file:'js/injected.js'};
-        console.log(files);
-        
-        chrome.tabs.executeScript(tabs[0].id,files);
-
-      });
-        break;
-      case 'img_choosed':
+    case 'isEnableShortCuts':
+      if (localStorage['enableshortcuts']=='yes')	{
+        callback();
+      }
+      break;
+    case 'captureAll':        
+      screenshot.captureAll($.extend({}, data, {
+        callback: callback
+      }));
+      break;
+    case 'img_choosed':
         console.log(data);
         getBase64Image(data.imgData, function(imgData){
           screenshot.createBySimpleImg(imgData.data, imgData.width, imgData.height);
