@@ -594,7 +594,7 @@ function Toolbar(options) {
     }
 
     this.addPlugins = function(object) {
-        return;
+        //return;
         if (!Array.isArray(object)) object = [object];
         $.each(object, function(key, cfg) {
             var newPlugin = createPluginFromObject(cfg);
