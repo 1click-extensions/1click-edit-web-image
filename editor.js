@@ -2364,9 +2364,6 @@ $(function(){
 
 $(function() {
 $('.buttons button').click(function() {
-
-        if (localStorage.showrat) return;
-        localStorage.showrat = true
         window.setTimeout(function() {
             checkIfRankNeededAndAndAddRank();
         }, 3000)
