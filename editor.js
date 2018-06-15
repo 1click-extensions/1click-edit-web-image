@@ -2363,21 +2363,12 @@ $(function(){
 });
 
 $(function() {
-$('.icon').click(function() {
+$('.buttons button').click(function() {
 
         if (localStorage.showrat) return;
         localStorage.showrat = true
         window.setTimeout(function() {
-            $('.pleaseRate').remove();
-            $('<div class=pleaseRate style="font-size:40px;padding:10px;background-color:white;border:1px solid gray;border-radius:3px">Do you like Screenshot Extension?<hr><div style=font-size:22px;text-align:center>Please rate us!<br>We really appreciate your 5-star review and we thank you for taking the time.<br><br><button><a target=_blank href="https://chrome.google.com/webstore/detail/akgpcdalpfphjmfifkmfbpdmgdmeeaeo/reviews" style="padding:20px;font-size:20px;font-weight:bolder">Rate now</a>&nbsp;<button>No Thanks</button><br><a href="https://github.com/AminaG/openscreenshot">Fork on GitHub</a></div>')
-            .css({
-                top: '100px',
-                left: '15%',
-                'position': 'absolute'
-            }).hide().appendTo(document.body).slideDown();
-            $(document).off('.slideup').on('click.slideup', function() {
-                $('.pleaseRate').slideUp()
-            })
+            checkIfRankNeededAndAndAddRank();
         }, 3000)
     })
 })
