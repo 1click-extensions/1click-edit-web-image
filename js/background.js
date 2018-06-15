@@ -40,7 +40,7 @@ if (!localStorage.created) {
   localStorage.created = 1;
 }
 chrome.browserAction.onClicked.addListener(function(tab){
-  console.log('dddd');
+  //console.log('dddd');
   screenshot.tryGetUrl(function () {
     console.log('tryGetUrl', screenshot.thisTabId);
     codeinjector.executeOnTab( screenshot.thisTabId,
@@ -65,7 +65,7 @@ chrome.runtime.onMessage.addListener(function (data, sender, callback) {
       }));
       break;
     case 'img_choosed':
-        console.log(data);
+        //console.log(data);
         getBase64Image(data.imgData, function(imgData){
           screenshot.createBySimpleImg(imgData.data, imgData.width, imgData.height);
         });
