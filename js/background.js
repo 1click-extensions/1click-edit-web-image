@@ -52,6 +52,7 @@ chrome.browserAction.onClicked.addListener(function(tab){
     
   });
 });
+localStorage['pngjpg'] = "png";
 chrome.runtime.onMessage.addListener(function (data, sender, callback) {
   switch (data.data) {
     case 'isEnableShortCuts':

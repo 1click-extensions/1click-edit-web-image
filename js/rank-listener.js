@@ -21,6 +21,7 @@ chrome.runtime.onMessage.addListener(function (data, sender, callback) {
 			callback(!localStorage.getItem('rankRequested'));
 			break;
 		case 'rankRequested':
+			 console.log(localStorage.getItem('rankRequested'))
 			localStorage.setItem('rankRequested', 1);
 			break;
 	}
