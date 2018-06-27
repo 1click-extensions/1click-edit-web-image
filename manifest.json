@@ -16,15 +16,16 @@
     },
     "web_accessible_resources": [
         "/images/*.png",
-
         "/css/pagestyles.css",
         "/css/dialog.css",
-
         "/libs/gapi.js",
         "/libs/jquery.js",
         "/js/dialog.js"
     ],
-    "offline_enabled":true,
+    "offline_enabled": true,
     "default_locale": "en",
-    "permissions": ["activeTab"]
+    "permissions": [
+        "activeTab"
+    ],
+    "homepage_url": "https://1ce.org"
 }
